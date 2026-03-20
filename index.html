@@ -29,7 +29,7 @@
       line-height: 1.7;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -45,7 +45,6 @@
       transition: background 0.3s;
     }
     nav.scrolled { background: rgba(28,22,20,0.95); }
-
     .nav-brand {
       font-family: 'Mulish', sans-serif;
       font-weight: 300;
@@ -54,7 +53,6 @@
       letter-spacing: 0.08em;
       text-decoration: none;
     }
-
     .nav-links { display: flex; gap: 2.2rem; list-style: none; }
     .nav-links a {
       color: rgba(255,255,255,0.82);
@@ -66,7 +64,6 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--white); }
-
     .hamburger {
       display: none;
       flex-direction: column;
@@ -84,7 +81,6 @@
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
     .mobile-menu {
       display: none;
       position: fixed;
@@ -108,7 +104,7 @@
     }
     .mobile-menu a:hover { color: var(--white); }
 
-    /* ── HERO ── */
+    /* HERO */
     #home {
       position: relative;
       height: 100vh;
@@ -151,7 +147,6 @@
       max-width: 480px;
       margin: 0 auto 2.2rem;
     }
-
     .btn {
       display: inline-block;
       padding: 0.75rem 2rem;
@@ -178,7 +173,7 @@
     }
     .btn-primary:hover { background: #75635d; border-color: #75635d; }
 
-    /* ── SECTIONS ── */
+    /* SECTIONS */
     section { scroll-margin-top: var(--nav-h); }
     .section-inner { max-width: 1060px; margin: 0 auto; padding: 5rem 5%; }
     .section-label {
@@ -196,7 +191,7 @@
       margin-bottom: 1.2rem;
     }
 
-    /* ── ABOUT ── */
+    /* ABOUT */
     #about { background: var(--white); }
     .about-grid {
       display: grid;
@@ -221,7 +216,7 @@
     .hi-text strong { display: block; font-size: 0.85rem; color: var(--text); }
     .hi-text span { font-size: 0.82rem; color: #777; }
 
-    /* ── GALLERY ── */
+    /* GALLERY */
     #gallery { background: var(--sand); }
     .gallery-grid {
       display: grid;
@@ -237,7 +232,7 @@
     .gallery-grid img:hover { transform: scale(1.03); box-shadow: 0 16px 40px rgba(0,0,0,0.18); }
     .gallery-grid .wide { grid-column: span 2; aspect-ratio: 16/7; }
 
-    /* ── LOCATION ── */
+    /* LOCATION */
     #location { background: var(--white); }
     .location-grid {
       display: grid;
@@ -265,7 +260,7 @@
       box-shadow: 0 8px 30px rgba(0,0,0,0.1);
     }
 
-    /* ── CONTACT ── */
+    /* CONTACT */
     #contact { background: var(--sand); }
     .contact-intro p { color: #555; margin-bottom: 0; max-width: 560px; }
     .contact-cards {
@@ -292,7 +287,7 @@
     .cta-link strong { display: block; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bark); margin-bottom: 0.1rem; }
     .cta-link span { font-size: 0.95rem; color: var(--text); line-height: 1.4; }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
       background: #1c1614;
       color: rgba(255,255,255,0.55);
@@ -309,18 +304,17 @@
     }
     footer .footer-nav a:hover { color: var(--white); }
 
-    /* ── ANIMATIONS ── */
+    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .reveal {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* Reveal: visible by default, animated when JS adds js-ready to body */
+    .reveal { transition: opacity 0.7s ease, transform 0.7s ease; }
+    .js-ready .reveal { opacity: 0; transform: translateY(24px); }
+    .js-ready .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
@@ -366,7 +360,7 @@
   <div class="hero-content">
     <p class="hero-eyebrow">Hopewell Junction, New York &middot; Hudson Valley</p>
     <h1 class="hero-title">Welcome to<br>Lake View Terrace</h1>
-    <p class="hero-subtitle">A peaceful 55+ manufactured home community and seasonal RV park — family owned and operated since 1960.</p>
+    <p class="hero-subtitle">A peaceful 55+ manufactured home community and seasonal RV park &mdash; family owned and operated since 1960.</p>
     <a href="#contact" class="btn btn-ghost">Check Site Availability</a>
   </div>
 </section>
@@ -375,11 +369,7 @@
 <section id="about">
   <div class="section-inner">
     <div class="about-grid reveal">
-      <img
-        src="images/Sign.jpeg"
-        alt="Lake View Terrace entrance sign"
-        class="about-img"
-      />
+      <img src="images/Sign.jpeg" alt="Lake View Terrace entrance sign" class="about-img" />
       <div class="about-text">
         <p class="section-label">Our Community</p>
         <h2>A Scenic, Peaceful Place to Call Home</h2>
@@ -387,28 +377,28 @@
         <p>Our park offers a scenic and peaceful living environment where neighbors know each other and tranquility is part of daily life. Whether you're looking for a permanent manufactured home or a seasonal RV getaway, we'd love to welcome you.</p>
         <div class="highlights">
           <div class="highlight-item">
-            <div class="hi-icon">🌿</div>
+            <div class="hi-icon">&#127807;</div>
             <div class="hi-text">
               <strong>55+ Resident Community</strong>
               <span>Peaceful, like-minded neighbors in a welcoming environment</span>
             </div>
           </div>
           <div class="highlight-item">
-            <div class="hi-icon">🏡</div>
+            <div class="hi-icon">&#127969;</div>
             <div class="hi-text">
               <strong>Manufactured Homes &amp; Seasonal RV Sites</strong>
               <span>Options for permanent residents and seasonal visitors</span>
             </div>
           </div>
           <div class="highlight-item">
-            <div class="hi-icon">🏔️</div>
+            <div class="hi-icon">&#9968;</div>
             <div class="hi-text">
               <strong>Hudson Valley Setting</strong>
               <span>Scenic surroundings and natural beauty year-round</span>
             </div>
           </div>
           <div class="highlight-item">
-            <div class="hi-icon">👨‍👩‍👧</div>
+            <div class="hi-icon">&#128106;</div>
             <div class="hi-text">
               <strong>Family Owned Since 1960</strong>
               <span>Over 60 years of community-focused management</span>
@@ -429,24 +419,12 @@
     <p class="section-label reveal">Gallery</p>
     <h2 class="reveal">Life at Lake View Terrace</h2>
     <div class="gallery-grid">
-      <img class="wide reveal"
-        src="images/Gallery1.jpeg"
-        alt="Community home with deck and gardens" loading="lazy" />
-      <img class="reveal"
-        src="images/Gallery2.jpeg"
-        alt="Hudson Valley view from the park" loading="lazy" />
-      <img class="reveal"
-        src="images/Gallery3.jpeg"
-        alt="Park entrance with mailboxes" loading="lazy" />
-      <img class="reveal"
-        src="images/Gallery4.jpeg"
-        alt="Home with landscaped garden" loading="lazy" />
-      <img class="reveal"
-        src="images/Gallery5.jpeg"
-        alt="Community home exterior" loading="lazy" />
-      <img class="wide reveal"
-        src="images/Background.jpeg"
-        alt="Street view of community homes" loading="lazy" />
+      <img class="wide reveal" src="images/Gallery1.jpeg" alt="Community home with deck and gardens" loading="lazy" />
+      <img class="reveal" src="images/Gallery2.jpeg" alt="Hudson Valley view from the park" loading="lazy" />
+      <img class="reveal" src="images/Gallery3.jpeg" alt="Park entrance with mailboxes" loading="lazy" />
+      <img class="reveal" src="images/Gallery4.jpeg" alt="Home with landscaped garden" loading="lazy" />
+      <img class="reveal" src="images/Gallery5.jpeg" alt="Community home exterior" loading="lazy" />
+      <img class="wide reveal" src="images/Background.jpeg" alt="Street view of community homes" loading="lazy" />
     </div>
   </div>
 </section>
@@ -455,37 +433,37 @@
 <section id="location">
   <div class="section-inner">
     <div class="location-grid">
-      <div class="location-info reveal">
+      <div class="reveal">
         <p class="section-label">Find Us</p>
         <h2>Our Location</h2>
-        <p style="color:#555; margin-bottom:2rem;">Conveniently located in Hopewell Junction in beautiful Dutchess County, New York — easily accessible from Route 82 and the Taconic State Parkway.</p>
+        <p style="color:#555; margin-bottom:2rem;">Conveniently located in Hopewell Junction in beautiful Dutchess County, New York &mdash; easily accessible from Route 82 and the Taconic State Parkway.</p>
         <div class="info-block">
-          <div class="info-icon">📍</div>
+          <div class="info-icon">&#128205;</div>
           <div class="info-detail">
             <strong>Address</strong>
             <span>147 Sylvan Lake Road<br>Hopewell Junction, NY 12533</span>
           </div>
         </div>
         <div class="info-block">
-          <div class="info-icon">📞</div>
+          <div class="info-icon">&#128222;</div>
           <div class="info-detail">
             <strong>Phone</strong>
             <span><a href="tel:8452640425">845-264-0425</a></span>
           </div>
         </div>
         <div class="info-block">
-          <div class="info-icon">✉️</div>
+          <div class="info-icon">&#9993;</div>
           <div class="info-detail">
             <strong>Email</strong>
-            <span><a href="/cdn-cgi/l/email-protection#32545a560372515d5f515341461c5c5746"><span class="__cf_email__" data-cfemail="f0969894c1b0939f9d93918384de9e9584">[email&#160;protected]</span></a></span>
+            <span><a href="mailto:fhd1@comcast.net">fhd1@comcast.net</a></span>
           </div>
         </div>
         <div class="info-block">
-          <div class="info-icon">🕐</div>
+          <div class="info-icon">&#128336;</div>
           <div class="info-detail">
             <strong>Office Hours</strong>
             <table class="hours-table">
-              <tr><td>Mon – Fri</td><td>Open</td></tr>
+              <tr><td>Mon &ndash; Fri</td><td>Open</td></tr>
               <tr><td>Saturday</td><td>Closed</td></tr>
               <tr><td>Sunday</td><td>Closed</td></tr>
             </table>
@@ -500,8 +478,7 @@
           title="Lake View Terrace location map">
         </iframe>
         <div style="margin-top:1rem; text-align:center;">
-          <a href="https://maps.google.com/?q=147+Sylvan+Lake+Road+Hopewell+Junction+NY+12533"
-             target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
+          <a href="https://maps.google.com/?q=147+Sylvan+Lake+Road+Hopewell+Junction+NY+12533" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
         </div>
       </div>
     </div>
@@ -514,21 +491,21 @@
     <div class="contact-intro reveal">
       <p class="section-label">Get in Touch</p>
       <h2>Contact Us</h2>
-      <p>Interested in a manufactured home site or seasonal RV space? Reach out by phone or email — we'd love to hear from you.</p>
+      <p>Interested in a manufactured home site or seasonal RV space? Reach out by phone or email &mdash; we'd love to hear from you.</p>
     </div>
     <div class="contact-cards">
       <a href="tel:8452640425" class="cta-link reveal">
-        <span class="cta-icon">📞</span>
+        <span class="cta-icon">&#128222;</span>
         <strong>Phone</strong>
         <span>845-264-0425</span>
       </a>
-      <a href="/cdn-cgi/l/email-protection#f4929c90c5b4979b9997958780da9a9180" class="cta-link reveal">
-        <span class="cta-icon">✉️</span>
+      <a href="mailto:fhd1@comcast.net" class="cta-link reveal">
+        <span class="cta-icon">&#9993;</span>
         <strong>Email</strong>
-        <span><span class="__cf_email__" data-cfemail="d1b7b9b5e091b2bebcb2b0a2a5ffbfb4a5">[email&#160;protected]</span></span>
+        <span>fhd1@comcast.net</span>
       </a>
       <a href="https://maps.google.com/?q=147+Sylvan+Lake+Road+Hopewell+Junction+NY+12533" target="_blank" rel="noopener" class="cta-link reveal">
-        <span class="cta-icon">📍</span>
+        <span class="cta-icon">&#128205;</span>
         <strong>Address</strong>
         <span>147 Sylvan Lake Road<br>Hopewell Junction, NY 12533</span>
       </a>
@@ -549,23 +526,46 @@
   <p style="margin-top:0.4rem;">
     <a href="tel:8452640425" style="color:rgba(255,255,255,0.55);text-decoration:none;">845-264-0425</a>
     &middot;
-    <a href="/cdn-cgi/l/email-protection#23454b471263404c4e404250570d4d4657" style="color:rgba(255,255,255,0.55);text-decoration:none;"><span class="__cf_email__" data-cfemail="cea8a6aaff8eada1a3adafbdbae0a0abba">[email&#160;protected]</span></a>
+    <a href="mailto:fhd1@comcast.net" style="color:rgba(255,255,255,0.55);text-decoration:none;">fhd1@comcast.net</a>
   </p>
   <p style="margin-top:1.2rem;font-size:0.75rem;">
     &copy; <span id="yr"></span> Lake View Terrace MHP. Family owned and operated since 1960.
   </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+  // Mark body as JS-ready so reveal animations activate
+  document.body.classList.add('js-ready');
+
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
+  const navEl = document.getElementById('nav');
+  window.addEventListener('scroll', function() {
+    navEl.classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('open');
-    mobileMe
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(function(el) { observer.observe(el); });
+</script>
+
+</body>
+</html>
