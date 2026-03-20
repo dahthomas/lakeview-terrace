@@ -122,8 +122,8 @@
     .hero-bg {
       position: absolute; inset: 0;
       background:
-        linear-gradient(rgba(12,38,64,0.52), rgba(12,38,64,0.52)),
-        url('https://images.unsplash.com/photo-1597001234897-a2cf0b8f6e68?w=1600&q=80&fit=crop') center/cover no-repeat;
+        linear-gradient(rgba(12,38,64,0.45), rgba(12,38,64,0.45)),
+        url('images/Background.jpeg') center/cover no-repeat;
     }
     .hero-content {
       position: relative; z-index: 1;
@@ -376,8 +376,8 @@
   <div class="section-inner">
     <div class="about-grid reveal">
       <img
-        src="https://images.unsplash.com/photo-1597001234897-a2cf0b8f6e68?w=800&q=80&fit=crop"
-        alt="Lake View Terrace community"
+        src="images/Sign.jpeg"
+        alt="Lake View Terrace entrance sign"
         class="about-img"
       />
       <div class="about-text">
@@ -430,23 +430,23 @@
     <h2 class="reveal">Life at Lake View Terrace</h2>
     <div class="gallery-grid">
       <img class="wide reveal"
-        src="https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?w=1000&q=80&fit=crop"
-        alt="Community view" loading="lazy" />
+        src="images/Gallery1.jpeg"
+        alt="Community home with deck and gardens" loading="lazy" />
       <img class="reveal"
-        src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80&fit=crop"
-        alt="Manufactured home exterior" loading="lazy" />
+        src="images/Gallery2.jpeg"
+        alt="Hudson Valley view from the park" loading="lazy" />
       <img class="reveal"
-        src="https://images.unsplash.com/photo-1525438160292-a4a860951216?w=600&q=80&fit=crop"
-        alt="Peaceful community street" loading="lazy" />
+        src="images/Gallery3.jpeg"
+        alt="Park entrance with mailboxes" loading="lazy" />
       <img class="reveal"
-        src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80&fit=crop"
-        alt="Home exterior" loading="lazy" />
+        src="images/Gallery4.jpeg"
+        alt="Home with landscaped garden" loading="lazy" />
       <img class="reveal"
-        src="https://images.unsplash.com/photo-1472224371017-08207f84aaae?w=600&q=80&fit=crop"
-        alt="Hudson Valley nature" loading="lazy" />
+        src="images/Gallery5.jpeg"
+        alt="Community home exterior" loading="lazy" />
       <img class="wide reveal"
-        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1000&q=80&fit=crop"
-        alt="Hudson Valley scenery" loading="lazy" />
+        src="images/Background.jpeg"
+        alt="Street view of community homes" loading="lazy" />
     </div>
   </div>
 </section>
@@ -477,7 +477,7 @@
           <div class="info-icon">✉️</div>
           <div class="info-detail">
             <strong>Email</strong>
-            <span><a href="mailto:fhd1@comcast.net">fhd1@comcast.net</a></span>
+            <span><a href="/cdn-cgi/l/email-protection#32545a560372515d5f515341461c5c5746"><span class="__cf_email__" data-cfemail="f0969894c1b0939f9d93918384de9e9584">[email&#160;protected]</span></a></span>
           </div>
         </div>
         <div class="info-block">
@@ -522,10 +522,10 @@
         <strong>Phone</strong>
         <span>845-264-0425</span>
       </a>
-      <a href="mailto:fhd1@comcast.net" class="cta-link reveal">
+      <a href="/cdn-cgi/l/email-protection#f4929c90c5b4979b9997958780da9a9180" class="cta-link reveal">
         <span class="cta-icon">✉️</span>
         <strong>Email</strong>
-        <span>fhd1@comcast.net</span>
+        <span><span class="__cf_email__" data-cfemail="d1b7b9b5e091b2bebcb2b0a2a5ffbfb4a5">[email&#160;protected]</span></span>
       </a>
       <a href="https://maps.google.com/?q=147+Sylvan+Lake+Road+Hopewell+Junction+NY+12533" target="_blank" rel="noopener" class="cta-link reveal">
         <span class="cta-icon">📍</span>
@@ -549,14 +549,14 @@
   <p style="margin-top:0.4rem;">
     <a href="tel:8452640425" style="color:rgba(255,255,255,0.55);text-decoration:none;">845-264-0425</a>
     &middot;
-    <a href="mailto:fhd1@comcast.net" style="color:rgba(255,255,255,0.55);text-decoration:none;">fhd1@comcast.net</a>
+    <a href="/cdn-cgi/l/email-protection#23454b471263404c4e404250570d4d4657" style="color:rgba(255,255,255,0.55);text-decoration:none;"><span class="__cf_email__" data-cfemail="cea8a6aaff8eada1a3adafbdbae0a0abba">[email&#160;protected]</span></a>
   </p>
   <p style="margin-top:1.2rem;font-size:0.75rem;">
     &copy; <span id="yr"></span> Lake View Terrace MHP. Family owned and operated since 1960.
   </p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
   const nav = document.getElementById('nav');
@@ -568,21 +568,4 @@
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
-  function closeMobile() {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-  }
-
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-</script>
-
-</body>
-</html>
+    mobileMe
